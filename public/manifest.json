@@ -1,0 +1,23 @@
+{
+  "name": "Disable antiAdBlocker",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Click Me"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "match_origin_as_fallback": true,
+      "js": ["background.js"]
+    }
+  ]
+}
